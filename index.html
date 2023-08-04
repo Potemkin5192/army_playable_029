@@ -5717,10 +5717,10 @@ if (reversed == null) { reversed = false; }
 			console.log('expandShootingLine');
 			num_sold++;
 			s_arrow.visible = true;
-			shooting.clickable = true;
 			soldCount.gotoAndStop(soldCount.currentFrame-1);
 			if (num_sold == 1) {
 				soldiers.s1.visible = true;
+				shooting.clickable = true;
 				s1run.visible = false;
 			} else if (num_sold == 2) {
 				soldiers.s2.visible = true;
@@ -5741,6 +5741,7 @@ if (reversed == null) { reversed = false; }
 		})
 		window.addEventListener('moveShootingLine', function () {
 			isShooting = false;
+			shooting.clickable = true;
 			if  (soldCount.currentFrame < 6) {
 				soldCount.gotoAndStop(soldCount.currentFrame+1);
 			}
@@ -5899,8 +5900,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"index_atlas_P_1.png?1691157242444", id:"index_atlas_P_1"},
-		{src:"index_atlas_NP_1.jpg?1691157242444", id:"index_atlas_NP_1"}
+		{src:"index_atlas_P_1.png?1691157565249", id:"index_atlas_P_1"},
+		{src:"index_atlas_NP_1.jpg?1691157565250", id:"index_atlas_NP_1"}
 	],
 	preloads: []
 };
