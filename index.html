@@ -5741,7 +5741,9 @@ if (reversed == null) { reversed = false; }
 		})
 		window.addEventListener('moveShootingLine', function () {
 			isShooting = false;
-			soldCount.gotoAndStop(soldCount.currentFrame+1);
+			if  (soldCount.currentFrame < 6) {
+				soldCount.gotoAndStop(soldCount.currentFrame+1);
+			}
 			if (soldiers.currentFrame < 5) {
 				soldiers.gotoAndStop(soldiers.currentFrame + 1);
 			}
@@ -5897,8 +5899,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"index_atlas_P_1.png?1691155365373", id:"index_atlas_P_1"},
-		{src:"index_atlas_NP_1.jpg?1691155365374", id:"index_atlas_NP_1"}
+		{src:"index_atlas_P_1.png?1691157242444", id:"index_atlas_P_1"},
+		{src:"index_atlas_NP_1.jpg?1691157242444", id:"index_atlas_NP_1"}
 	],
 	preloads: []
 };
