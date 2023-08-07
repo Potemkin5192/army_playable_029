@@ -5462,12 +5462,11 @@ if (reversed == null) { reversed = false; }
 		})
 		window.addEventListener('expandShootingLine', function () {
 			//expand shooting line
-			console.log('expandShootingLine');
 			num_sold++;
 			s_arrow.visible = true;
+			shooting.clickable = true;
 			soldCount.gotoAndStop(soldCount.currentFrame-1);
 			if (num_sold == 1) {
-				shooting.clickable = true;
 				soldiers.s1.visible = true;
 				s1run.visible = false;
 			} else if (num_sold == 2) {
@@ -5489,7 +5488,6 @@ if (reversed == null) { reversed = false; }
 		})
 		window.addEventListener('moveShootingLine', function () {
 			isShooting = false;
-			shooting.clickable = true;
 			if  (soldCount.currentFrame < 6) {
 				soldCount.gotoAndStop(soldCount.currentFrame+1);
 			}
@@ -5499,6 +5497,9 @@ if (reversed == null) { reversed = false; }
 			if (soldiers.s6.currentFrame > 1) {
 				num_sold = 0;
 				s_arrow.visible = false;
+			}
+			if (soldCount.currentFrame != 6) {
+				shooting.clickable = true;
 			}
 		})
 		window.addEventListener('startgame', function (){
@@ -5646,8 +5647,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"index_atlas_P_1.png?1691409601673", id:"index_atlas_P_1"},
-		{src:"index_atlas_NP_1.jpg?1691409601673", id:"index_atlas_NP_1"}
+		{src:"index_atlas_P_1.png?1691413429241", id:"index_atlas_P_1"},
+		{src:"index_atlas_NP_1.jpg?1691413429241", id:"index_atlas_NP_1"}
 	],
 	preloads: []
 };
